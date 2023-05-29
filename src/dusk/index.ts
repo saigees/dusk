@@ -31,7 +31,10 @@ export default class Dusk {
         return ur
     }
 
-    public format(): string {
+    public async fetch(data: ResponseInit): Promise<Response> {
+        return fetch(this.url, data)
+    }
+    public format(): this {
         let u = this.url
         if(this.params) {
             for(let i = 0; i < Object.keys(this.params).length; i++) {
@@ -41,6 +44,7 @@ export default class Dusk {
                 u += `${symbol}${key}=${encodeURIComponent(value)}`
             }
         }
-        return u
+        this.url = u
+        return this
     }
 }

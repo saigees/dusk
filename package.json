@@ -1,5 +1,6 @@
 {
-  "name": "dusk",
+  "name": "duskurl",
+  "private": false,
   "version": "1.0.0",
   "description": "",
   "main": "index.js",

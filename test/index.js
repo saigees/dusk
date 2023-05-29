@@ -1,8 +1,17 @@
 const { Dusk } = require("../dist");
 
-const url = new Dusk("https://localhost:5432/:user", {
-  user: "saige",
-  admin: true,
-}).format()
+async function main() {
+  const url = new Dusk("https://jsonplaceholder.typicode.com/todos/:id", {
+    id: 1,
+  }).format();
 
-console.log(url)
+  console.log(
+    await url
+      .fetch({
+        method: "GET",
+      })
+      .then((r) => r.json())
+  );
+}
+
+main();
