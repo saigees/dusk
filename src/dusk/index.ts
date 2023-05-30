@@ -34,7 +34,7 @@ export default class Dusk {
     public async fetch(data: ResponseInit): Promise<Response> {
         return fetch(this.url, data)
     }
-    public format(): this {
+    public format(pipe?: boolean): this | string {
         let u = this.url
         if(this.params) {
             for(let i = 0; i < Object.keys(this.params).length; i++) {
@@ -45,6 +45,10 @@ export default class Dusk {
             }
         }
         this.url = u
-        return this
+        if(pipe) {
+            return this
+        } else {
+            return this.url
+        }
     }
 }

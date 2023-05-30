@@ -1,13 +1,14 @@
 {
   "name": "duskurl",
   "private": false,
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsup --dts",
-    "test": "jest"
+    "test": "jest",
+    "push": "git add . && git commit -m \"updates\" && git push --set-upstream dusk master; npm publish"
   },
   "exports": {
     ".": "./dist/index.js"
