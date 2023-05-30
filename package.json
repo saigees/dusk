@@ -8,7 +8,7 @@
   "scripts": {
     "build": "tsup --dts",
     "test": "jest",
-    "push": "git add . && git commit -m \"updates\" && git push --set-upstream dusk master; npm publish"
+    "push": "git add . && git commit -m \"updates\" && git push --set-upstream dusk master && npm publish"
   },
   "exports": {
     ".": "./dist/index.js"
