@@ -55,7 +55,7 @@ var Dusk = class {
   async fetch(data) {
     return fetch(this.url, data);
   }
-  format() {
+  format(pipe) {
     let u = this.url;
     if (this.params) {
       for (let i = 0; i < Object.keys(this.params).length; i++) {
@@ -66,7 +66,11 @@ var Dusk = class {
       }
     }
     this.url = u;
-    return this;
+    if (pipe) {
+      return this;
+    } else {
+      return this.url;
+    }
   }
 };
 //# sourceMappingURL=index.js.map

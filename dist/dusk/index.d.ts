@@ -6,7 +6,7 @@ declare class Dusk {
     constructor(url: string, params?: O<string, any>);
     private replace_keys;
     fetch(data: ResponseInit): Promise<Response>;
-    format(): this;
+    format(pipe?: boolean): this | string;
 }
 
 export { Dusk as default };
